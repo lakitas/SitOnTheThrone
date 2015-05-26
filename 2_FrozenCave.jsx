@@ -7,17 +7,21 @@
 }
 #END_PROPERTIES#
 /*******************
- *      frozencave.js     * '░'
+ *      FrozenCave.js     * '░'
  *******************
- * Hello young traveler!
- *
- * We are in dire need of an adventurer
- * to brave the dangers and use his wits
- * to escape the traps and retrieve the
- * ultimate prize...
- *
- * You will know when you see it.
- *
+ * So you did it.
+ * 
+ * You found the cave.
+ * 
+ * To be frank i didn't think
+ * you had it in you.
+ * 
+ * Lets see you in this challenge.
+ * 
+ * And no my name is not Frank.
+ * 
+ * Every traveller knows that the
+ * adventures never truly end.
  */
 
 function getRandomInt(min, max) {
