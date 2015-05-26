@@ -9,9 +9,21 @@
 /*******************
  *      frozencave.js     * '░'
  *******************
+ * Hello young traveler!
+ *
+ * We are in dire need of an adventurer
+ * to brave the dangers and use his wits
+ * to escape the traps and retrieve the
+ * ultimate prize...
+ *
+ * You will know when you see it.
  *
  */
 
+function getRandomInt(min, max) {
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+ 
 function startLevel(map) {
 #START_OF_START_LEVEL#
     var savedX, savedY, savedDirection;
@@ -63,7 +75,8 @@ function startLevel(map) {
 		'symbol': String.fromCharCode(0x2617),
 		'color' : '#5C1F00',
 		'impassable': true
-	});	
+	});
+	
     map.createFromGrid(
 ['##################################################',
 '##xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx##',
@@ -97,6 +110,21 @@ function startLevel(map) {
         'x': 'ice',
         'C': 'computer',
     }, 0, 0);
+	
+	for (var i = 0; i < 75; i++) {
+		player = map.getPlayer();
+        var x = getRandomInt(0, map.getWidth() - 1);
+        var y = getRandomInt(0, map.getHeight() - 1);
+        if ((x != player.getX() || y != player.getY())
+            && (x != map.getWidth()-9 || y != 7)
+			&& (x != map.getWidth()-9 || y != 6)
+			&& (x != player.getX() || y != map.getHeight()-2)
+			&& (x != player.getX() || y != map.getHeight()-3)
+			&& (x != player.getX() || y != map.getHeight()-4)) {
+            // don't place mine over exit, player or computer!
+            map.placeObject(x, y, 'boulder');
+		}
+	}
 #BEGIN_EDITABLE#
 
 #END_EDITABLE#
