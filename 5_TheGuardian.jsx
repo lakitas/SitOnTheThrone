@@ -1,9 +1,6 @@
 #BEGIN_PROPERTIES#
 {
     "version": "0.0",
-	"mapProperties": {
-        "refreshRate": 50
-    },
 }
 #END_PROPERTIES#
 /*******************
@@ -31,7 +28,7 @@
 function startLevel(map) {
 #START_OF_START_LEVEL#
 
-firing = true
+firing = false
 
 function wakeandhunt(obj, type) {
 		var direction;
@@ -73,22 +70,20 @@ map.defineObject('boss', {
         },    
 	});
 	
-map.defineObject('flamer', {
+map.defineObject('fireboulder', {
         'type': 'dynamic',
         'symbol': '⊙',
         'color': 'red',
         'interval': 200,
         'onCollision': function (player) {
-            player.killedBy('the boss');
+            player.killedBy('a fireboulder');
         },
         'behavior': function (me) {
-			if (Math.random() < 0.3) {
-				map.placeObject(me.getX(), me.getY() + 2, 'bullet');
-			}
+            map.placeObject(me.getX(), me.getY(), 'firesprout');
         },
-    });
-	
-map.defineObject('fireSprout', {
+    });	
+
+    map.defineObject('firesprout', {
         'type': 'dynamic',
         'symbol': '.',
         'color': 'red',
@@ -112,41 +107,48 @@ map.defineObject('plate', {
     map.createFromGrid(
 ['###########                                      ',
 '#                                                 ',
-'#          F                                      ',
+'#           #                                     ',
+'#          #                                      ',
+'#           #                                     ',
+'#          #                                      ',
+'#           #                                     ',
+'#          #                                      ',
+'#           #                                     ',
+'#          #                                      ',
+'#           #                                     ',
+'#          #                                      ',
+'#           #                                     ',
+'#          #                                      ',
+'#           #                                     ',
+'#          #                                      ',
+'#           #                                     ',
+'#          #                                      ',
+'#           #                                     ',
 '#          #                                      ',
 '#          #                                      ',
-'#          #                                      ',
-'#          #                                      ',
-'#          #                                      ',
-'#          #                                      ',
-'#          #                                      ',
-'#          F                                      ',
-'#          #                                      ',
-'#          #                                      ',
-'#          #                                      ',
-'#          #                                      ',
-'#          #                                      ',
-'#          #                                      ',
-'#          #                                      ',
-'#          #                                      ',
-'#          #                                      ',
-'#          F                                      ',
 '#          #                         B            ',
 '#          #                                      ',
-'#PPPPPPPPPP#                               E      ',
+'#          #                               E      ',
 '#####@     #                                      '],
     {
         '@': 'player',
         'E': 'exit',
         '#': 'boulder',
 		'B': 'boss',
-		'P': 'plate',
-		'F': 'flamer',
     }, 0, 0);
+	
+	map.placeObject(11, 2, 'fireboulder');
+	map.placeObject(11, 4, 'fireboulder');
+	map.placeObject(11, 6, 'fireboulder');
+	map.placeObject(11, 8, 'fireboulder');
+	map.placeObject(11, 10, 'fireboulder');
+	map.placeObject(11, 12, 'fireboulder');
+	map.placeObject(11, 14, 'fireboulder');
+	map.placeObject(11, 16, 'fireboulder');
+	map.placeObject(11, 18, 'fireboulder');
 	
 #BEGIN_EDITABLE#
 
-map.placeObject(11, 3, 'boulder');
 
 #END_EDITABLE#
 
