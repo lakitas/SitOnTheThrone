@@ -16,6 +16,8 @@
  * You need a way to distinguish danger... 
  * and danger is usually red!
  *
+ * Every traveller knows that the
+ * adventures never truly end.
  */
 
 function getRandomInt(min, max) {
