@@ -31,7 +31,7 @@ function startLevel(map) {
 
 firing = false
 
-function wakeandhunt(obj, type) {
+function wakeAndHunt(obj, type) {
 		var direction;
         var target = obj.findNearest(type);
         var leftDist = obj.getX() - target.x;
@@ -67,24 +67,24 @@ map.defineObject('boss', {
             player.killedBy('the boss');
         },
         'behavior': function (me) {
-        	wakeandhunt(me, 'player');
+        	wakeAndHunt(me, 'player');
         },    
 	});
 	
-map.defineObject('fireboulder', {
+map.defineObject('fireBoulder', {
         'type': 'dynamic',
         'symbol': '⊙',
         'color': 'red',
         'interval': 200,
         'onCollision': function (player) {
-            player.killedBy('a fireboulder');
+            player.killedBy('a fireBoulder');
         },
         'behavior': function (me) {
-            map.placeObject(me.getX(), me.getY(), 'firesprout');
+            map.placeObject(me.getX(), me.getY(), 'fireSprout');
         },
     });	
 
-    map.defineObject('firesprout', {
+    map.defineObject('fireSprout', {
         'type': 'dynamic',
         'symbol': '.',
         'color': 'red',
@@ -94,16 +94,6 @@ map.defineObject('fireboulder', {
             me.move('left');
         }
     });
-	
-map.defineObject('plate', {
-        'type': 'static',
-        'symbol': String.fromCharCode(0x095),
-        'color': 'black',
-        'onCollision': function (firing) {
-            map.writeStatus('You just heard a clicking sound...');
-			firing = true;
-        },   
-	});
 	
     map.createFromGrid(
 ['#################################################',
@@ -138,15 +128,15 @@ map.defineObject('plate', {
 		'B': 'boss',
     }, 0, 0);
 	
-	map.placeObject(11, 2, 'fireboulder');
-	map.placeObject(11, 4, 'fireboulder');
-	map.placeObject(11, 6, 'fireboulder');
-	map.placeObject(11, 8, 'fireboulder');
-	map.placeObject(11, 10, 'fireboulder');
-	map.placeObject(11, 12, 'fireboulder');
-	map.placeObject(11, 14, 'fireboulder');
-	map.placeObject(11, 16, 'fireboulder');
-	map.placeObject(11, 18, 'fireboulder');
+	map.placeObject(11, 2, 'fireBoulder');
+	map.placeObject(11, 4, 'fireBoulder');
+	map.placeObject(11, 6, 'fireBoulder');
+	map.placeObject(11, 8, 'fireBoulder');
+	map.placeObject(11, 10, 'fireBoulder');
+	map.placeObject(11, 12, 'fireBoulder');
+	map.placeObject(11, 14, 'fireBoulder');
+	map.placeObject(11, 16, 'fireBoulder');
+	map.placeObject(11, 18, 'fireBoulder');
 	
 #BEGIN_EDITABLE#
 

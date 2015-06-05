@@ -1,0 +1,13 @@
+pokemon: strength style ->block lasers with boulders.
+->pressure plates.
+->cut(removing obstacles that are in your way).
+
+phone method: ->create clone of yourself.
+->(un)hide method stealth approach for the player.
+->having a method made by the player to decrypt a message and print the decryption on screen.
+
+on use of something( lever, button,...) the user is given a set amount of steps( or time).
+
+teleporter( start at last level and teleport back at the first level, picking up the skills to face whetever made you teleport back).
+
+categorisation: mods for processing code and mods for using the skills and brains.
