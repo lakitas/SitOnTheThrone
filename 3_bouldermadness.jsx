@@ -4,15 +4,15 @@
 }
 #END_PROPERTIES#
 /********************************
- *      bouldermadness.js		*
+ *      BoulderMadness.js		*
  ********************************
  *
  * Getting through the ice was not easy,
  * in this section of the cave
  * some of the snowy boulders maybe be movable,
- * or maybe you can even squeeze yourself throught them,
+ * or maybe you can even squeeze yourself through them,
  * but be careful, pushing too hard might get you stuck,
- * or worse... dead!
+ * or worse...
  * You need a way to distinguish danger... 
  * and danger is usually red!
  *
@@ -26,7 +26,9 @@ function getRandomInt(min, max) {
  
 function startLevel(map) {
 #START_OF_START_LEVEL#
-    map.placePlayer(1, 1);
+    
+	map.placePlayer(1, 1);
+	
 	map.placeObject(map.getWidth()-2, map.getHeight()-2, 'exit');
 
 	map.defineObject('boulder', {
@@ -35,20 +37,20 @@ function startLevel(map) {
 		'impassable': true
 	});
 	
-	map.defineObject('movingboulder', {
+	map.defineObject('movingBoulder', {
 		#{#                		 #}#
 		'symbol': String.fromCharCode(0x2617),
 		'pushable': true,
 		'type': 'dynamic',
 	});	
 
-	map.defineObject('trapboulder', {
+	map.defineObject('trapBoulder', {
 		#{#                		 #}#
 		'symbol': String.fromCharCode(0x2617),
 		'pushable': true,
 		'type': 'dynamic',
         'onCollision': function (player) {
-            player.killedBy('getting trapped under boulder');
+            player.killedBy('Got trapped under boulder');
         },
 	});	
 	
@@ -66,11 +68,11 @@ function startLevel(map) {
 			var placement = getRandomInt(0,15);
 			if (map.getObjectTypeAt(x, y)=== "empty") {
 				if ( placement < 8) {
-					map.placeObject(x, y, 'movingboulder');
+					map.placeObject(x, y, 'movingBoulder');
 				} else if (placement < 13) {
 					map.placeObject(x, y, 'boulder');
 				} else {
-					map.placeObject(x, y, 'trapboulder');
+					map.placeObject(x, y, 'trapBoulder');
 				}
 			} else {
 				i = i -1;

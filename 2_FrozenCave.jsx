@@ -1,6 +1,6 @@
 #BEGIN_PROPERTIES#
 {
-    "version": "0.0",
+    "version": "1.0",
     "mapProperties": {
         "allowOverwrite": true
     }	
@@ -13,7 +13,7 @@
  * 
  * You found the cave.
  * 
- * To be frank i didn't think
+ * To be frank I didn't think
  * you had it in you.
  * 
  * Lets see you in this challenge.
