@@ -6,9 +6,9 @@
          "map.validateExactlyXManyObjects"],
 }
 #END_PROPERTIES#
-/********************************
+/****************************
  *      BatAttack.js		*
- ********************************
+ ****************************
  *
  * As you proceed into the cave
  * you notice some creatures hiding in the darkness.

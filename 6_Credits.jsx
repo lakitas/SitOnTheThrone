@@ -6,9 +6,9 @@
     }
 }
 #END_PROPERTIES#
-/*******************
- *      ANewJourney.js     * '░'
- *******************
+/***************************
+ *      ANewJourney.js     *
+ ***************************
  * Hello young traveler!
  *
  * There will always be dire need

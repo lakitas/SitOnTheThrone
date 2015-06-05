@@ -6,9 +6,9 @@
     }	
 }
 #END_PROPERTIES#
-/*******************
- *      FrozenCave.js     * '░'
- *******************
+/**************************
+ *      FrozenCave.js     *
+ **************************
  * So you did it.
  * 
  * You found the cave.
