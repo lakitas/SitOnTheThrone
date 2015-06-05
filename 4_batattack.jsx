@@ -4,18 +4,17 @@
     "commandsIntroduced":
         ["object.passableFor",
          "map.validateExactlyXManyObjects"],
-    "music": "conspiracy"
 }
 #END_PROPERTIES#
 /********************************
- *      batattack.js		*
+ *      BatAttack.js		*
  ********************************
  *
  * As you proceed into the cave
  * you notice some creatures hiding in the darkness.
- * They seem to be asleep, proceed with care though,
- * it might be better if they remain asleep...
- * You can be sneaky or loud, its your choice!
+ * They seem to be asleep... Proceed with care though,
+ * for they tend to sleep lightly.
+ * Sneaky or smart, you never truly had an option.
  *
  * Every traveller knows that the
  * adventures never truly end.
@@ -25,7 +24,7 @@
 function startLevel(map) {
 #START_OF_START_LEVEL#
 
-    function wakeandhunt(obj, type) {
+    function wakeAndHunt(obj, type) {
 		var direction;
         var target = obj.findNearest(type);
         var leftDist = obj.getX() - target.x;
@@ -55,7 +54,7 @@ function startLevel(map) {
             player.killedBy('a bat');
         },
         'behavior': function (me) {
-            wakeandhunt(me, 'player');
+            wakeAndHunt(me, 'player');
 		}
     });
 

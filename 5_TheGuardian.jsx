@@ -1,22 +1,23 @@
 #BEGIN_PROPERTIES#
 {
-    "version": "0.0",
+    "version": "1.0",
 }
 #END_PROPERTIES#
 /*******************
  *      TheGuardian.js     * '░'
  *******************
  *
- * As I walk through the valley of the
- * shadow of the collosi, I shall fear
- * no evil for a man once told me
- * it would be dangerous out there
- * and gave me things to go alone.
- * But what he didn't understand was 
- * my greatest gift was the courage
- * and my will to protect those I
- * cared about.
+ * The treasure must be precious...
+ * truly.
  * 
+ * No man has entered thus far in this
+ * hellish dungeon and so there is 
+ * none to say what you will find.
+ * 
+ * So go on, use your thought as
+ * as a shield to guard you against
+ * the dangers that lurk up ahead.
+ *
  * Every traveller knows that the
  * adventures never truly end.
  */
@@ -105,31 +106,31 @@ map.defineObject('plate', {
 	});
 	
     map.createFromGrid(
-['###########                                      ',
-'#                                                 ',
-'#           #                                     ',
-'#          #                                      ',
-'#           #                                     ',
-'#          #                                      ',
-'#           #                                     ',
-'#          #                                      ',
-'#           #                                     ',
-'#          #                                      ',
-'#           #                                     ',
-'#          #                                      ',
-'#           #                                     ',
-'#          #                                      ',
-'#           #                                     ',
-'#          #                                      ',
-'#           #                                     ',
-'#          #                                      ',
-'#           #                                     ',
-'#          #                                      ',
-'#          #                                      ',
-'#          #                         B            ',
-'#          #                                      ',
-'#          #                               E      ',
-'#####@     #                                      '],
+['#################################################',
+'#                                                #',
+'#           #                                    #',
+'#          #                                     #',
+'#           #                                    #',
+'#          #                                     #',
+'#           #                                    #',
+'#          #                                     #',
+'#           #                                    #',
+'#          #                                     #',
+'#           #                                    #',
+'#          #                                     #',
+'#           #                                    #',
+'#          #                                     #',
+'#           #                                    #',
+'#          #                                     #',
+'#           #                                    #',
+'#          #                                     #',
+'#           #                                    #',
+'#          #                                     #',
+'#          #                                     #',
+'#          #                         B           #',
+'#          #                                     #',
+'#          #                               E     #',
+'#####@     #######################################'],
     {
         '@': 'player',
         'E': 'exit',
