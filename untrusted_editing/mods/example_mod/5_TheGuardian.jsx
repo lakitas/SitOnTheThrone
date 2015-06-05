@@ -29,8 +29,6 @@
 function startLevel(map) {
 #START_OF_START_LEVEL#
 
-firing = false
-
 function wakeAndHunt(obj, type) {
 		var direction;
         var target = obj.findNearest(type);
@@ -79,9 +77,6 @@ map.defineObject('fireBoulder', {
         'onCollision': function (player) {
             player.killedBy('a fireBoulder');
         },
-        'behavior': function (me) {
-            map.placeObject(me.getX(), me.getY(), 'fireSprout');
-        },
     });	
 
     map.defineObject('fireSprout', {
@@ -95,36 +90,55 @@ map.defineObject('fireBoulder', {
         }
     });
 	
+	map.defineObject('plate', {
+        'type': 'dynamic',
+        'symbol': 'O',
+        'color': 'black',
+        'behavior': function (me) {
+            map.writeStatus('You heard a clicking sound...')
+			map.placeObject(10, 2, 'fireSprout');
+			map.placeObject(10, 4, 'fireSprout');
+			map.placeObject(10, 6, 'fireSprout');
+			map.placeObject(10, 8, 'fireSprout');
+			map.placeObject(10, 10, 'fireSprout');
+			map.placeObject(10, 12, 'fireSprout');
+			map.placeObject(10, 14, 'fireSprout');
+			map.placeObject(10, 16, 'fireSprout');
+			map.placeObject(10, 18, 'fireSprout');
+        }
+    });
+	
     map.createFromGrid(
 ['#################################################',
 '#                                                #',
 '#           #                                    #',
-'#          #                                     #',
+'#OOOOOOOOOO#                                     #',
 '#           #                                    #',
-'#          #                                     #',
+'#OOOOOOOOOO#                                     #',
 '#           #                                    #',
-'#          #                                     #',
+'#OOOOOOOOOO#                                     #',
 '#           #                                    #',
-'#          #                                     #',
+'#OOOOOOOOOO#                                     #',
 '#           #                                    #',
-'#          #                                     #',
+'#OOOOOOOOOO#                                     #',
 '#           #                                    #',
-'#          #                                     #',
+'#OOOOOOOOOO#                                     #',
 '#           #                                    #',
-'#          #                                     #',
+'#OOOOOOOOOO#                                     #',
 '#           #                                    #',
-'#          #                                     #',
+'#OOOOOOOOOO#                                     #',
 '#           #                                    #',
-'#          #                                     #',
+'#OOOOOOOOOO#                                     #',
 '#          #                                     #',
 '#          #                         B           #',
 '#          #                                     #',
-'#          #                               E     #',
+'#OOOOOOOOOO#                               E     #',
 '#####@     #######################################'],
     {
         '@': 'player',
         'E': 'exit',
         '#': 'boulder',
+		'O': 'plate',
 		'B': 'boss',
     }, 0, 0);
 	
